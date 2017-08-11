@@ -1,0 +1,10 @@
+#!/bin/bash
+#Script para verificar si stellarium ya esta abierto
+
+ps=`ps -A | grep stellarium`;
+if [ -z "$ps" ]; then
+echo "No se está ejecutando. Iniciando..."
+stellarium &
+else
+echo "Ya se esta ejecutando"
+fi

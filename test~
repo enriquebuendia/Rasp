@@ -1,0 +1,5 @@
+#!/bin/bash
+
+WID=`xdotool getactivewindow | head -1`
+xvkbd -window stellarium -text "\C1"
+xdotool windowactivate --sync $WID

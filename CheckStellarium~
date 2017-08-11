@@ -1,0 +1,12 @@
+#!/bin/bash
+#Script para verificar si stellarium ya esta abierto
+
+WD=`xdotool getactivewindow | head -1`
+ps=`ps -A | grep stellarium`;
+if [ -z "$ps" ]; then
+echo "No se está ejecutando. Iniciando..."
+stellarium &
+xdotool windowactivate --sync $WD
+else
+echo "Ya se esta ejecutando"
+fi
